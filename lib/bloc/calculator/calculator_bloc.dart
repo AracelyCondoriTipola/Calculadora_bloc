@@ -12,8 +12,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   CalculatorBloc() : super(CalculatorState());
 
   @override
-  Stream<CalculatorState> mapEventToState(CalculatorEvent event) {
-    // TODO: implement mapEventToState
-    throw UnimplementedError();
-  }
+  Stream<CalculatorState> mapEventToState(
+    CalculatorEvent event,
+  ) async* {}
 }

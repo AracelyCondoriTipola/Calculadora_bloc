@@ -4,7 +4,7 @@ part of 'calculator_bloc.dart';
 @immutable
 abstract class CalculatorEvent {}
 
-class Reset extends CalculatorEvent {}
+class ResetAC extends CalculatorEvent {}
 
 class addNumber extends CalculatorEvent {
   final String number;
