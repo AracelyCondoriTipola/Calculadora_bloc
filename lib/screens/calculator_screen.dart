@@ -1,11 +1,12 @@
+import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
+import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
+import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
+import 'package:calculadora/widgets/results_labels.dart';
 import 'package:flutter/material.dart';
+import 'package:calculadora/widgets/calc_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-// ignore: unused_import
-import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
-
-import 'package:calculadora/widgets/results_labels.dart';
-import 'package:calculadora/widgets/calc_button.dart';
+import '../bloc/calculator/calculator_bloc.dart';
 
 class CalculatorScreen extends StatelessWidget {
   @override
@@ -21,6 +22,7 @@ class CalculatorScreen extends StatelessWidget {
             Expanded(
               child: Container(),
             ),
+            //llamdo a results
             ResultsLabels(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -53,15 +55,15 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '7',
-                  onPressed: () => print('7'),
+                  onPressed: () => CalculatorBloc.add(addNumber('7')),
                 ),
                 CalculatorButton(
                   text: '8',
-                  onPressed: () => print('8'),
+                  onPressed: () => CalculatorBloc.add(addNumber('8')),
                 ),
                 CalculatorButton(
                   text: '9',
-                  onPressed: () => print('9'),
+                  onPressed: () => CalculatorBloc.add(addNumber('9')),
                 ),
                 CalculatorButton(
                   text: 'X',

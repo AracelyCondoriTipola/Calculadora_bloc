@@ -12,7 +12,7 @@ class AppState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(providers: [
       BlocProvider<CalculatorBloc>(create: (_) => CalculatorBloc())
-    ], child: MyApp());
+    ], child: AppState());
   }
 }
 

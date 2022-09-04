@@ -1,10 +1,10 @@
 import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
-import 'package:calculadora/widgets/sub_result.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'line_separator.dart';
 import 'main_result.dart';
+import 'sub_result.dart';
 
 class ResultsLabels extends StatelessWidget {
   @override
@@ -22,5 +22,6 @@ class ResultsLabels extends StatelessWidget {
         );
       },
     );
+    
   }
 }
