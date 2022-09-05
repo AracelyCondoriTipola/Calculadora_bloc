@@ -10,7 +10,12 @@ part 'calculator_state.dart';
 
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   //constructor
-  CalculatorBloc() : super(CalculatorState());
+  CalculatorBloc(
+      {required String mathResult,
+      required String firstNumber,
+      required String secondNumber,
+      required String operation})
+      : super(CalculatorState());
 
   @override
   Stream<CalculatorState> mapEventToState(
@@ -18,15 +23,16 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   ) async* {
     if (event is ResetAC) {
       yield CalculatorState(
+          //primer numero
           firstNumber: '0',
+          //resultado de la calculadora
           mathResult: '0',
+          //segundo numero
           secondNumber: '0',
+          //operacion
           operation: 'none');
     } else if (event is AddNumber) {
-      yield CalculatorState(
-        firstNumber: '0',
-        secondNumber: '0',
-        operation: 'none',
+      yield state.copyWith(
         mathResult: (state.mathResult == '0')
             ? event.number
             : state.mathResult + event.number,

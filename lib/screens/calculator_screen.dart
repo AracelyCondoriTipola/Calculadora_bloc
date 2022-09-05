@@ -1,6 +1,5 @@
 import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
-import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
-import 'package:calculadora/bloc/calculator/calculator_bloc.dart';
+
 import 'package:calculadora/widgets/results_labels.dart';
 import 'package:flutter/material.dart';
 import 'package:calculadora/widgets/calc_button.dart';
@@ -55,15 +54,15 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '7',
-                  onPressed: () => CalculatorBloc.add(addNumber('7')),
+                  onPressed: () => CalculatorBloc.add(AddNumber('7')),
                 ),
                 CalculatorButton(
                   text: '8',
-                  onPressed: () => CalculatorBloc.add(addNumber('8')),
+                  onPressed: () => CalculatorBloc.add(AddNumber('8')),
                 ),
                 CalculatorButton(
                   text: '9',
-                  onPressed: () => CalculatorBloc.add(addNumber('9')),
+                  onPressed: () => CalculatorBloc.add(AddNumber('9')),
                 ),
                 CalculatorButton(
                   text: 'X',
@@ -77,15 +76,15 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '4',
-                  onPressed: () => print('4'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('4')),
                 ),
                 CalculatorButton(
                   text: '5',
-                  onPressed: () => print('5'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('5')),
                 ),
                 CalculatorButton(
                   text: '6',
-                  onPressed: () => print('6'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('6')),
                 ),
                 CalculatorButton(
                   text: '-',
@@ -99,15 +98,15 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 CalculatorButton(
                   text: '1',
-                  onPressed: () => print('1'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('1')),
                 ),
                 CalculatorButton(
                   text: '2',
-                  onPressed: () => print('2'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('2')),
                 ),
                 CalculatorButton(
                   text: '3',
-                  onPressed: () => print('3'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('3')),
                 ),
                 CalculatorButton(
                   text: '+',
@@ -122,11 +121,11 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: '0',
                   big: true,
-                  onPressed: () => print('0'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('0')),
                 ),
                 CalculatorButton(
                   text: '.',
-                  onPressed: () => print('.'),
+                  onPressed: () => CalculatorBloc.add(AddNumber('.')),
                 ),
                 CalculatorButton(
                   text: '=',

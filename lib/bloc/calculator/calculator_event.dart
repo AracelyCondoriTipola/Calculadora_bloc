@@ -6,7 +6,9 @@ abstract class CalculatorEvent {}
 
 class ResetAC extends CalculatorEvent {}
 
-class addNumber extends CalculatorEvent {
+class AddNumber extends CalculatorEvent {
   final String number;
-  addNumber(this.number);
+  AddNumber(this.number);
 }
+
+class ChangeNegativePositive extends CalculatorEvent {}

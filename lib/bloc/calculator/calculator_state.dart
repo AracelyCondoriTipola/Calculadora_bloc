@@ -11,4 +11,19 @@ class CalculatorState {
       this.firstNumber = '10',
       this.secondNumber = '20',
       this.operation = '+'});
+
+  // metodo devuelve un nueVo estado de la calculadora
+
+  CalculatorBloc copyWith({
+    String? mathResult,
+    String? firstNumber,
+    String? secondNumber,
+    String? operation,
+  }) =>
+      CalculatorBloc(
+        mathResult: mathResult ?? this.mathResult,
+        firstNumber: firstNumber ?? this.mathResult,
+        secondNumber: secondNumber ?? this.mathResult,
+        operation: operation ?? this.mathResult,
+      );
 }
