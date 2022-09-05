@@ -40,12 +40,12 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: 'del',
                   bgColor: Color(0xffA5A5A5),
-                  onPressed: () => print('del'),
+                  onPressed: () => CalculatorBloc.add(DeleteLasEntry()),
                 ),
                 CalculatorButton(
                   text: '/',
                   bgColor: Color(0xffF0A23B),
-                  onPressed: () => print('/'),
+                  onPressed: () => CalculatorBloc.add(OperationEntry('/')),
                 ),
               ],
             ),
@@ -67,7 +67,7 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: 'X',
                   bgColor: Color(0xffF0A23B),
-                  onPressed: () => print('X'),
+                  onPressed: () => CalculatorBloc.add(OperationEntry('X')),
                 ),
               ],
             ),
@@ -89,7 +89,7 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: '-',
                   bgColor: Color(0xffF0A23B),
-                  onPressed: () => print('-'),
+                  onPressed: () => CalculatorBloc.add(OperationEntry('-')),
                 ),
               ],
             ),
@@ -111,7 +111,7 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: '+',
                   bgColor: Color(0xffF0A23B),
-                  onPressed: () => print('+'),
+                  onPressed: () => CalculatorBloc.add(OperationEntry('+')),
                 ),
               ],
             ),
@@ -130,7 +130,7 @@ class CalculatorScreen extends StatelessWidget {
                 CalculatorButton(
                   text: '=',
                   bgColor: Color(0xffF0A23B),
-                  onPressed: () => print('='),
+                  onPressed: () => CalculatorBloc.add(CalculateResult()),
                 ),
               ],
             ),

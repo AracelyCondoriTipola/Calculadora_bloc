@@ -21,12 +21,11 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   Stream<CalculatorState> mapEventToState(
     CalculatorEvent event,
   ) async* {
-
     //Borrar todo
     if (event is ResetAC) {
       yield* this._resetAC();
 
-    //agregar numeros
+      //agregar numeros
     } else if (event is AddNumber) {
       yield state.copyWith(
         mathResult: (state.mathResult == '0')
@@ -34,21 +33,31 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
             : state.mathResult + event.number,
       );
       //Cambiar signo de + o -
-    } else if (event is ChangeNegativePositive){
+    } else if (event is ChangeNegativePositive) {
       yield state.copyWith(
-        mathResult:  state.mathResult.contains('-')
-                    ? state.mathResult.replaceFirst('-', '')
-                    : '-' + state.mathResult
-
-      );
+          mathResult: state.mathResult.contains('-')
+              ? state.mathResult.replaceFirst('-', '')
+              : '-' + state.mathResult);
 
       //Borrar ultimo digito
-    } else if (event is DeleteLasEntry){
+    } else if (event is DeleteLasEntry) {
       yield state.copyWith(
-        mathResult:  state.mathResult.length > 1
-                    ? state.mathResult.substring(0, state.mathResult.length=1)
-                    : '0'
-    };
+          mathResult: state.mathResult.length > 1
+              ? state.mathResult.substring(0, state.mathResult.length = 1)
+              : '0');
+
+      //Agregar operacion
+    } else if (event is OpeationEntry) {
+      yield state.copyWith(
+          firstNumber: state.mathResult,
+          mathResult: '0',
+          operation: event.operation,
+          seconcNumber: '0');
+
+      //Calcular resultado
+    } else if (Event is CalculatorEvemt) {
+      yield _calculateResult();
+    }
   }
 
   //
@@ -61,6 +70,21 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
         //segundo numero
         secondNumber: '0',
         //operacion
-        operation: 'none');
+        operation: '+');
+  }
+
+  Stream<CalculatorState> _calculateResult() async* {
+    final double num1 = double.parse(state.firstNumber);
+    final double num2 = double.parse(state.mathResult);
+
+    switch (state.operation) {
+      case '+':
+        yield state.copyWith(
+            secondNumber: state.mathResult, athResult: '${num1 + num2}');
+        break;
+
+      default:
+        yield state;
+    }
   }
 }
