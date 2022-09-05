@@ -12,3 +12,5 @@ class AddNumber extends CalculatorEvent {
 }
 
 class ChangeNegativePositive extends CalculatorEvent {}
+
+class DeleteLasEntry extends CalculatorEvent {}
